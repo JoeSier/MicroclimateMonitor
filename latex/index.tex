@@ -1,0 +1,18 @@
+\chapter{Microclimate manager}
+\hypertarget{index}{}\label{index}\index{Microclimate manager@{Microclimate manager}}
+\begin{DoxyAuthor}{Author}
+Joseph Sier (\href{mailto:pxw22tju@uea.ac.uk}{\texttt{ pxw22tju@uea.\+ac.\+uk}})
+\end{DoxyAuthor}
+The aim of this project is to provide a device that can read necessary values within a closed terrarium.
+
+Peripherals used\+: MQ135, DHT11, Light Dependent Resistor (photocell), Capacitive Moisture Sensor, GLCD and touchscreen.
+
+The initial warmup page presents a ready button to enter the data page, or alternatively you can skip the warmup and go straight to settings (via bottom right button) to choose a preset.
+
+I chose the presets "{}tropical"{} "{}temperate"{} and "{}desert"{} as i thought that those would be the most likely options within a terraium in the UK e.\+g succulents, ferns etc.
+
+Upon choosing a preset and returning to the data page, the user can get some guidance on what needs to be adjusted within their terrarium.
+
+Header files\+: for the sensors, i used typedef to easily assign the data and make it more readable and manageable. It also allowed me to encapsulate each sensor within its own file, for easy and modular use.
+
+In most of the .h files, i opted to use uint8-\/16 or int8, as most of these values were percentages, they would have a max of 100 or stay within four digits, and some (\doxylink{_moisture_8h}{moisture.\+h}) could enter negatives, which is why it has to be signed. 

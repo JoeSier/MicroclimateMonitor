@@ -1,0 +1,114 @@
+\doxysection{C\+:/temp/humidtemp/\+Moisture.c File Reference}
+\hypertarget{_moisture_8c}{}\label{_moisture_8c}\index{C:/temp/humidtemp/Moisture.c@{C:/temp/humidtemp/Moisture.c}}
+
+
+This file contains functions to read moisture sensor data and calculate moisture percentage.  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}Moisture.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_moisture_8c_a6499427730f243000f1da1bee41ca064}\label{_moisture_8c_a6499427730f243000f1da1bee41ca064} 
+\#define {\bfseries AIR\+\_\+\+VALUE}~698
+\begin{DoxyCompactList}\small\item\em Value when the sensor is exposed to air. \end{DoxyCompactList}\item 
+\Hypertarget{_moisture_8c_a58217d5ac3ff4788c4440bb6b9829c5f}\label{_moisture_8c_a58217d5ac3ff4788c4440bb6b9829c5f} 
+\#define {\bfseries WATER\+\_\+\+VALUE}~285
+\begin{DoxyCompactList}\small\item\em Value when the sensor is submerged in water. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_moisture_8c_ab66e88e73e935433d27613e6b65139dd}{map}} (int x, int in\+\_\+min, int in\+\_\+max, int out\+\_\+min, int out\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Maps a value from one range to another. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{_moisture_8c_aa6ec66abe5a237b9b6afee38da2b637b}{read\+Moisture}} ()
+\begin{DoxyCompactList}\small\item\em Reads the analog value from the moisture sensor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_moisture_8c_ab3b3d3261c9044c26a452e1e902c5fcf}{read\+Moisture\+Percent}} (void)
+\begin{DoxyCompactList}\small\item\em Calculates the moisture percentage based on the analog value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_moisture_8c_a813dd0f99a8db5b95eae54ae10851907}{Moisture\+\_\+\+Get\+Data}} (\mbox{\hyperlink{struct_moisture___data_typedef}{Moisture\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}Moisture\+\_\+\+Data)
+\begin{DoxyCompactList}\small\item\em Get moisture data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions to read moisture sensor data and calculate moisture percentage. 
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier
+\end{DoxyAuthor}
+Calibrated for the value in air (0\%), and the value in water (100\%). The ADC reading is then converted to a percentage within this.
+
+I used a Capacitive sensor instead of resistive as the resistive can corrode. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_moisture_8c_ab66e88e73e935433d27613e6b65139dd}\label{_moisture_8c_ab66e88e73e935433d27613e6b65139dd} 
+\index{Moisture.c@{Moisture.c}!map@{map}}
+\index{map@{map}!Moisture.c@{Moisture.c}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily int map (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{in\+\_\+min,  }\item[{int}]{in\+\_\+max,  }\item[{int}]{out\+\_\+min,  }\item[{int}]{out\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Maps a value from one range to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The value to map. \\
+\hline
+{\em in\+\_\+min} & The minimum value of the input range. \\
+\hline
+{\em in\+\_\+max} & The maximum value of the input range. \\
+\hline
+{\em out\+\_\+min} & The minimum value of the output range. \\
+\hline
+{\em out\+\_\+max} & The maximum value of the output range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mapped value. 
+\end{DoxyReturn}
+\Hypertarget{_moisture_8c_a813dd0f99a8db5b95eae54ae10851907}\label{_moisture_8c_a813dd0f99a8db5b95eae54ae10851907} 
+\index{Moisture.c@{Moisture.c}!Moisture\_GetData@{Moisture\_GetData}}
+\index{Moisture\_GetData@{Moisture\_GetData}!Moisture.c@{Moisture.c}}
+\doxysubsubsection{\texorpdfstring{Moisture\_GetData()}{Moisture\_GetData()}}
+{\footnotesize\ttfamily void Moisture\+\_\+\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_moisture___data_typedef}{Moisture\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}}]{Moisture\+\_\+\+Data }\end{DoxyParamCaption})}
+
+
+
+Get moisture data. 
+
+This function retrieves moisture data and stores it in the provided \doxylink{struct_moisture___data_typedef}{Moisture\+\_\+\+Data\+Typedef} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Moisture\+\_\+\+Data} & Pointer to the structure \doxylink{struct_moisture___data_typedef}{Moisture\+\_\+\+Data\+Typedef}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_moisture_8c_aa6ec66abe5a237b9b6afee38da2b637b}\label{_moisture_8c_aa6ec66abe5a237b9b6afee38da2b637b} 
+\index{Moisture.c@{Moisture.c}!readMoisture@{readMoisture}}
+\index{readMoisture@{readMoisture}!Moisture.c@{Moisture.c}}
+\doxysubsubsection{\texorpdfstring{readMoisture()}{readMoisture()}}
+{\footnotesize\ttfamily uint16\+\_\+t read\+Moisture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the analog value from the moisture sensor. 
+
+\begin{DoxyNote}{Note}
+The sensor is connected to channel 7 (A2) of ADC3. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The analog value. 
+\end{DoxyReturn}
+\Hypertarget{_moisture_8c_ab3b3d3261c9044c26a452e1e902c5fcf}\label{_moisture_8c_ab3b3d3261c9044c26a452e1e902c5fcf} 
+\index{Moisture.c@{Moisture.c}!readMoisturePercent@{readMoisturePercent}}
+\index{readMoisturePercent@{readMoisturePercent}!Moisture.c@{Moisture.c}}
+\doxysubsubsection{\texorpdfstring{readMoisturePercent()}{readMoisturePercent()}}
+{\footnotesize\ttfamily int read\+Moisture\+Percent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the moisture percentage based on the analog value. 
+
+\begin{DoxyReturn}{Returns}
+The moisture percentage. 
+\end{DoxyReturn}

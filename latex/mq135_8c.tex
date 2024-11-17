@@ -1,0 +1,129 @@
+\doxysection{C\+:/temp/humidtemp/mq135.c File Reference}
+\hypertarget{mq135_8c}{}\label{mq135_8c}\index{C:/temp/humidtemp/mq135.c@{C:/temp/humidtemp/mq135.c}}
+
+
+This file contains functions to read data from the MQ135 sensor and calculate the PPM (Parts Per Million) of CO2.  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}mq135.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{mq135_8c_a85cb6e060bd30aa59d836c60d3b3c2af}\label{mq135_8c_a85cb6e060bd30aa59d836c60d3b3c2af} 
+\#define {\bfseries \+\_\+rload}~21.\+0f
+\begin{DoxyCompactList}\small\item\em Load on board in k\+Ohm. \end{DoxyCompactList}\item 
+\Hypertarget{mq135_8c_ac2f01876dfba89737e31a9b118a7ed8f}\label{mq135_8c_ac2f01876dfba89737e31a9b118a7ed8f} 
+\#define {\bfseries \+\_\+rzero}~1766.\+01f
+\begin{DoxyCompactList}\small\item\em resistance at atmospheric CO2 level \end{DoxyCompactList}\item 
+\Hypertarget{mq135_8c_a4a9bbfdf5f09030f9a6e13286d150201}\label{mq135_8c_a4a9bbfdf5f09030f9a6e13286d150201} 
+\#define {\bfseries PARA}~116.\+6020682
+\begin{DoxyCompactList}\small\item\em Param for getting CO2 PPM from sensor resistance. \end{DoxyCompactList}\item 
+\Hypertarget{mq135_8c_a988138d51a6a1ea00adae209ceaea2b1}\label{mq135_8c_a988138d51a6a1ea00adae209ceaea2b1} 
+\#define {\bfseries PARB}~2.\+769034857
+\begin{DoxyCompactList}\small\item\em Param for getting CO2 PPM from sensor resistance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{mq135_8c_a19ae2e013ce3d87ca3fa8d8403e5567b}{read\+MQ135}} ()
+\begin{DoxyCompactList}\small\item\em Reads the analog value from the MQ135 sensor. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{mq135_8c_a97c063781679f8abe4705b7e0f8f1b93}{my\+\_\+pow}} (double base, int exponent)
+\begin{DoxyCompactList}\small\item\em Custom power function. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{mq135_8c_a7b8189229cc7f8aca2d1c63819de6d56}{get\+MQ135\+Resistance}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the resistance of the MQ135 sensor from the analog reading. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{mq135_8c_ac0709b185081f2a3b166493efefebcd1}{get\+MQ135\+PPM}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the PPM of CO2 using calibrated values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{mq135_8c_a59fcea79d8d186f13298aa72970cc829}{MQ\+\_\+\+Get\+Data}} (\mbox{\hyperlink{struct_m_q135___data_typedef}{MQ135\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}MQ135\+\_\+\+Data)
+\begin{DoxyCompactList}\small\item\em Get MQ135 data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions to read data from the MQ135 sensor and calculate the PPM (Parts Per Million) of CO2. 
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier \begin{DoxyVerb}The implementation is based on the MQ135 Arduino library.
+\end{DoxyVerb}
+ The MQ135 sensor is a multi purpose sensor, but i have it configured for CO2, using 21K total resistance (\+\_\+\+Rload). It requires a preheat before use, which is why there is a warmup page at the beginning. It should be around 20 seconds to 2 minutes, but decreased for useability. The analog output increases when the tin oxide (Sn\+O2) pad inside the MQ135 comes into contact with CO2, which increases its conductivity. This gives a value proportional to the gas concentration, which is converted to volts. It is calibrated using the resistance at atmospheric co2 level, but is not adjusted for temperature and humidity. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mq135_8c_ac0709b185081f2a3b166493efefebcd1}\label{mq135_8c_ac0709b185081f2a3b166493efefebcd1} 
+\index{mq135.c@{mq135.c}!getMQ135PPM@{getMQ135PPM}}
+\index{getMQ135PPM@{getMQ135PPM}!mq135.c@{mq135.c}}
+\doxysubsubsection{\texorpdfstring{getMQ135PPM()}{getMQ135PPM()}}
+{\footnotesize\ttfamily float get\+MQ135\+PPM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the PPM of CO2 using calibrated values. 
+
+\begin{DoxyReturn}{Returns}
+PPM of CO2. 
+\end{DoxyReturn}
+\Hypertarget{mq135_8c_a7b8189229cc7f8aca2d1c63819de6d56}\label{mq135_8c_a7b8189229cc7f8aca2d1c63819de6d56} 
+\index{mq135.c@{mq135.c}!getMQ135Resistance@{getMQ135Resistance}}
+\index{getMQ135Resistance@{getMQ135Resistance}!mq135.c@{mq135.c}}
+\doxysubsubsection{\texorpdfstring{getMQ135Resistance()}{getMQ135Resistance()}}
+{\footnotesize\ttfamily float get\+MQ135\+Resistance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the resistance of the MQ135 sensor from the analog reading. 
+
+\begin{DoxyReturn}{Returns}
+Resistance of the MQ135 sensor in volts. 
+\end{DoxyReturn}
+\Hypertarget{mq135_8c_a59fcea79d8d186f13298aa72970cc829}\label{mq135_8c_a59fcea79d8d186f13298aa72970cc829} 
+\index{mq135.c@{mq135.c}!MQ\_GetData@{MQ\_GetData}}
+\index{MQ\_GetData@{MQ\_GetData}!mq135.c@{mq135.c}}
+\doxysubsubsection{\texorpdfstring{MQ\_GetData()}{MQ\_GetData()}}
+{\footnotesize\ttfamily void MQ\+\_\+\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_q135___data_typedef}{MQ135\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}}]{MQ135\+\_\+\+Data }\end{DoxyParamCaption})}
+
+
+
+Get MQ135 data. 
+
+This function retrieves MQ135 data and stores it in the provided \doxylink{struct_m_q135___data_typedef}{MQ135\+\_\+\+Data\+Typedef} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em MQ135\+\_\+\+Data} & Pointer to the structure \doxylink{struct_m_q135___data_typedef}{MQ135\+\_\+\+Data\+Typedef}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{mq135_8c_a97c063781679f8abe4705b7e0f8f1b93}\label{mq135_8c_a97c063781679f8abe4705b7e0f8f1b93} 
+\index{mq135.c@{mq135.c}!my\_pow@{my\_pow}}
+\index{my\_pow@{my\_pow}!mq135.c@{mq135.c}}
+\doxysubsubsection{\texorpdfstring{my\_pow()}{my\_pow()}}
+{\footnotesize\ttfamily double my\+\_\+pow (\begin{DoxyParamCaption}\item[{double}]{base,  }\item[{int}]{exponent }\end{DoxyParamCaption})}
+
+
+
+Custom power function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base} & Base value. \\
+\hline
+{\em exponent} & Exponent value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result of base raised to the power of exponent. 
+\end{DoxyReturn}
+\Hypertarget{mq135_8c_a19ae2e013ce3d87ca3fa8d8403e5567b}\label{mq135_8c_a19ae2e013ce3d87ca3fa8d8403e5567b} 
+\index{mq135.c@{mq135.c}!readMQ135@{readMQ135}}
+\index{readMQ135@{readMQ135}!mq135.c@{mq135.c}}
+\doxysubsubsection{\texorpdfstring{readMQ135()}{readMQ135()}}
+{\footnotesize\ttfamily uint32\+\_\+t read\+MQ135 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the analog value from the MQ135 sensor. 
+
+\begin{DoxyNote}{Note}
+The sensor is connected to channel 8 (A1) of ADC3. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The analog value read from the sensor. 
+\end{DoxyReturn}

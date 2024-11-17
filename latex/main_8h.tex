@@ -1,0 +1,64 @@
+\doxysection{C\+:/temp/humidtemp/main.h File Reference}
+\hypertarget{main_8h}{}\label{main_8h}\index{C:/temp/humidtemp/main.h@{C:/temp/humidtemp/main.h}}
+
+
+File Containing definitions for hadc, buffer and user\+Trigger.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{main_8h_a38e7c3f1ce348a3ed20459d277245263}{buffer}} \mbox{[}128\mbox{]}
+\item 
+bool \mbox{\hyperlink{main_8h_a76e50c51dd2d37971e360fa8e7b2065f}{user\+Trigger}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8h_a22b804736f5648d52f639b2647d4ed13}{hadc1}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8h_acd9221f1aa19aebfe0b744947f2daf49}{hadc2}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8h_a984624bcf28d1b2fb7e4e18349f65d5c}{hadc3}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File Containing definitions for hadc, buffer and user\+Trigger. 
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier 
+\end{DoxyAuthor}
+Defines string buffer and the usertrigger toggled by interrupt, as well as the ADC\+\_\+\+Handle\+Type\+Def for the sensors. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8h_a38e7c3f1ce348a3ed20459d277245263}\label{main_8h_a38e7c3f1ce348a3ed20459d277245263} 
+\index{main.h@{main.h}!buffer@{buffer}}
+\index{buffer@{buffer}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char buffer\mbox{[}128\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+Buffer for storing data \Hypertarget{main_8h_a22b804736f5648d52f639b2647d4ed13}\label{main_8h_a22b804736f5648d52f639b2647d4ed13} 
+\index{main.h@{main.h}!hadc1@{hadc1}}
+\index{hadc1@{hadc1}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{hadc1}{hadc1}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc1\hspace{0.3cm}{\ttfamily [extern]}}
+
+ADC handle 1 Moisture \Hypertarget{main_8h_acd9221f1aa19aebfe0b744947f2daf49}\label{main_8h_acd9221f1aa19aebfe0b744947f2daf49} 
+\index{main.h@{main.h}!hadc2@{hadc2}}
+\index{hadc2@{hadc2}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{hadc2}{hadc2}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc2\hspace{0.3cm}{\ttfamily [extern]}}
+
+ADC handle 2 MQ135 \Hypertarget{main_8h_a984624bcf28d1b2fb7e4e18349f65d5c}\label{main_8h_a984624bcf28d1b2fb7e4e18349f65d5c} 
+\index{main.h@{main.h}!hadc3@{hadc3}}
+\index{hadc3@{hadc3}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{hadc3}{hadc3}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc3\hspace{0.3cm}{\ttfamily [extern]}}
+
+ADC handle 3 LDR \Hypertarget{main_8h_a76e50c51dd2d37971e360fa8e7b2065f}\label{main_8h_a76e50c51dd2d37971e360fa8e7b2065f} 
+\index{main.h@{main.h}!userTrigger@{userTrigger}}
+\index{userTrigger@{userTrigger}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{userTrigger}{userTrigger}}
+{\footnotesize\ttfamily bool user\+Trigger\hspace{0.3cm}{\ttfamily [extern]}}
+
+Flag for user trigger 

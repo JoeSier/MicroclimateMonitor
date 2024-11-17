@@ -1,0 +1,289 @@
+\doxysection{C\+:/temp/humidtemp/\+GLCD.c File Reference}
+\hypertarget{_g_l_c_d_8c}{}\label{_g_l_c_d_8c}\index{C:/temp/humidtemp/GLCD.c@{C:/temp/humidtemp/GLCD.c}}
+
+
+Implementation of GLCD functions.  
+
+
+{\ttfamily \#include "{}Board\+\_\+\+GLCD.\+h"{}}\newline
+{\ttfamily \#include "{}Board\+\_\+\+Touch.\+h"{}}\newline
+{\ttfamily \#include "{}GLCD\+\_\+\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}Moisture.\+h"{}}\newline
+{\ttfamily \#include "{}mq135.\+h"{}}\newline
+{\ttfamily \#include "{}DHT.\+h"{}}\newline
+{\ttfamily \#include "{}LDR.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_g_l_c_d_8c_a58b5a77886edd411aa8f79ae61783f17}\label{_g_l_c_d_8c_a58b5a77886edd411aa8f79ae61783f17} 
+void {\bfseries display\+Moisture} (void)
+\begin{DoxyCompactList}\small\item\em Display soil moisture data on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_aacfa27bd64604cb4ef75aa4977792dea}\label{_g_l_c_d_8c_aacfa27bd64604cb4ef75aa4977792dea} 
+void {\bfseries get\+Time\+Active} (void)
+\begin{DoxyCompactList}\small\item\em Display system uptime in hours, minutes, and seconds on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_ae53d090480764a50aae98026596e2ad9}\label{_g_l_c_d_8c_ae53d090480764a50aae98026596e2ad9} 
+void {\bfseries display\+MQ135} ()
+\begin{DoxyCompactList}\small\item\em Display MQ135 data (CO2 concentration) on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_aa1271eddc35d1bf6942a951bf322b985}\label{_g_l_c_d_8c_aa1271eddc35d1bf6942a951bf322b985} 
+void {\bfseries display\+DHT} ()
+\begin{DoxyCompactList}\small\item\em Display temperature and humidity data on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_a44d6b3edcc9ede7a1c285cd0217c69a5}\label{_g_l_c_d_8c_a44d6b3edcc9ede7a1c285cd0217c69a5} 
+void {\bfseries display\+LDR} (void)
+\begin{DoxyCompactList}\small\item\em When the LDR detects light, it starts a counter which is displayed on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_a75972c73422ec28909ead4a09b98f684}\label{_g_l_c_d_8c_a75972c73422ec28909ead4a09b98f684} 
+void {\bfseries settings\+Page} ()
+\begin{DoxyCompactList}\small\item\em Display settings page on the GLCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_l_c_d_8c_a020041bdc3787b8a639ed70bd2dcb30d}{display\+Status}} (int x, int y, const char \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Display status message at specified location. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_l_c_d_8c_a21e6322473debe666c97124594feccf8}{check\+And\+Display\+Status}} (int highthreshold, int low\+Threshold, int value, int x, int y, const char \texorpdfstring{$\ast$}{*}high\+Msg, const char \texorpdfstring{$\ast$}{*}low\+Msg, const char \texorpdfstring{$\ast$}{*}good\+Msg)
+\begin{DoxyCompactList}\small\item\em Check value against thresholds and display corresponding status message. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_ac9eda1f9adeaac60fb3d0da5d63bdb29}\label{_g_l_c_d_8c_ac9eda1f9adeaac60fb3d0da5d63bdb29} 
+void {\bfseries data\+Page} ()
+\begin{DoxyCompactList}\small\item\em Display data page on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_acf634b8d659cecfc206de05d86f695f8}\label{_g_l_c_d_8c_acf634b8d659cecfc206de05d86f695f8} 
+void {\bfseries ready\+Page} (void)
+\begin{DoxyCompactList}\small\item\em Display ready page on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_ac42dec6d28aae87d1038037598346318}\label{_g_l_c_d_8c_ac42dec6d28aae87d1038037598346318} 
+void {\bfseries all\+Page} (void)
+\begin{DoxyCompactList}\small\item\em Display all page elements on the GLCD. \end{DoxyCompactList}\item 
+\Hypertarget{_g_l_c_d_8c_a2e94d3a3ed52be7c6e137af812cd3268}\label{_g_l_c_d_8c_a2e94d3a3ed52be7c6e137af812cd3268} 
+void {\bfseries warm\+Up} (void)
+\begin{DoxyCompactList}\small\item\em Display warm up page on the GLCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_g_l_c_d_8c_a394285c3933b594a1033423d38f7587f}{GLCDLogic}} ()
+\begin{DoxyCompactList}\small\item\em GLCDLogic function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TOUCH\+\_\+\+STATE \mbox{\hyperlink{_g_l_c_d_8c_a988b591bccb95f09ec55e449cc4ae528}{tsc\+\_\+state}}
+\item 
+GLCD\+\_\+\+FONT \mbox{\hyperlink{_g_l_c_d_8c_a2b791557b4e284380da57c3838b75bfa}{GLCD\+\_\+\+Font\+\_\+6x8}}
+\item 
+GLCD\+\_\+\+FONT \mbox{\hyperlink{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\+\_\+\+Font\+\_\+16x24}}
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a76e50c51dd2d37971e360fa8e7b2065f}{user\+Trigger}}
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_aa8aa827dab861da09a82601c1493a21c}{data\+Transition}} =true
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_ae301d435533a9b49bc3a9485fdf8e1b8}{draw\+Bars}} =true
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a4d2bb12048d831ca90dacc68b6a6d3f0}{initial\+Page}} =true
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a06b2c30cc33fb19d78dfae29068d842d}{ready\+Transition}} =true
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a330661e379b19c85c17ede08dfaf1e7a}{settings\+Transition}} =true
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a2084c0b4612f85c8978d68f313384b1b}{show\+Data}} =false
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a2ce4812059bf0e42da5aeb46f5e608cd}{show\+Data\+Page}} =false
+\item 
+bool \mbox{\hyperlink{_g_l_c_d_8c_a52f24b2f77156cc0bc24b925ba098f2b}{show\+Settings\+Page}} =false
+\item 
+char \mbox{\hyperlink{_g_l_c_d_8c_a6b2be00545748909fe02383dbbf1f64d}{preset}} \mbox{[}9\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_g_l_c_d_8c_abe58442f86399641d4ca7ee3e53de1f8}{Temperature}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_g_l_c_d_8c_aa89905b62886f8dd96cee63c1b5e8ea2}{Humidity}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{_g_l_c_d_8c_a6bcb80d51f27ae9ebd7e2fd243e88a52}{soil\+Moisture\+Percent}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_g_l_c_d_8c_a86806c565f196a65b3fe98ab22390b35}{ldr\+\_\+val}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_g_l_c_d_8c_add07759efe05f19128ee6ac5cc5633e9}{k}}
+\item 
+\Hypertarget{_g_l_c_d_8c_ad013e60dc6e24c897fb0ea843a4d73a4}\label{_g_l_c_d_8c_ad013e60dc6e24c897fb0ea843a4d73a4} 
+\mbox{\hyperlink{struct_l_d_r___data_typedef}{LDR\+\_\+\+Data\+Typedef}} {\bfseries LDR\+\_\+\+Data}
+\item 
+\Hypertarget{_g_l_c_d_8c_a77cfd3a4cea65c292c25621e0c82aaf5}\label{_g_l_c_d_8c_a77cfd3a4cea65c292c25621e0c82aaf5} 
+\mbox{\hyperlink{struct_d_h_t___data_typedef}{DHT\+\_\+\+Data\+Typedef}} {\bfseries DHT11\+\_\+\+Data}
+\item 
+\Hypertarget{_g_l_c_d_8c_ab46cb43ee0132ff1e35804933cf4bf08}\label{_g_l_c_d_8c_ab46cb43ee0132ff1e35804933cf4bf08} 
+\mbox{\hyperlink{struct_moisture___data_typedef}{Moisture\+\_\+\+Data\+Typedef}} {\bfseries Moisture\+\_\+\+Data}
+\item 
+\Hypertarget{_g_l_c_d_8c_a1224668e70409b268979a54914896509}\label{_g_l_c_d_8c_a1224668e70409b268979a54914896509} 
+\mbox{\hyperlink{struct_m_q135___data_typedef}{MQ135\+\_\+\+Data\+Typedef}} {\bfseries MQ135\+\_\+\+Data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of GLCD functions. 
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier
+\end{DoxyAuthor}
+I opted to keep everything GLCD related inside \doxylink{_g_l_c_d_8c}{GLCD.\+c}.
+
+This displays every page, as well as the data from sensors. Preset parameteres are loosely based off the Koppen climate classification. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_g_l_c_d_8c_a21e6322473debe666c97124594feccf8}\label{_g_l_c_d_8c_a21e6322473debe666c97124594feccf8} 
+\index{GLCD.c@{GLCD.c}!checkAndDisplayStatus@{checkAndDisplayStatus}}
+\index{checkAndDisplayStatus@{checkAndDisplayStatus}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{checkAndDisplayStatus()}{checkAndDisplayStatus()}}
+{\footnotesize\ttfamily void check\+And\+Display\+Status (\begin{DoxyParamCaption}\item[{int}]{highthreshold,  }\item[{int}]{low\+Threshold,  }\item[{int}]{value,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{high\+Msg,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{low\+Msg,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{good\+Msg }\end{DoxyParamCaption})}
+
+
+
+Check value against thresholds and display corresponding status message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em high\+Threshold} & High threshold value \\
+\hline
+{\em low\+Threshold} & Low threshold value \\
+\hline
+{\em value} & Value to compare against thresholds \\
+\hline
+{\em x} & X-\/coordinate of the status message \\
+\hline
+{\em y} & Y-\/coordinate of the status message \\
+\hline
+{\em high\+Msg} & Message to display if value exceeds high threshold \\
+\hline
+{\em low\+Msg} & Message to display if value falls below low threshold \\
+\hline
+{\em good\+Msg} & Message to display if value is within thresholds \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_g_l_c_d_8c_a020041bdc3787b8a639ed70bd2dcb30d}\label{_g_l_c_d_8c_a020041bdc3787b8a639ed70bd2dcb30d} 
+\index{GLCD.c@{GLCD.c}!displayStatus@{displayStatus}}
+\index{displayStatus@{displayStatus}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{displayStatus()}{displayStatus()}}
+{\footnotesize\ttfamily void display\+Status (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{status }\end{DoxyParamCaption})}
+
+
+
+Display status message at specified location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X-\/coordinate of the message \\
+\hline
+{\em y} & Y-\/coordinate of the message \\
+\hline
+{\em status} & Status message to display \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_g_l_c_d_8c_a394285c3933b594a1033423d38f7587f}\label{_g_l_c_d_8c_a394285c3933b594a1033423d38f7587f} 
+\index{GLCD.c@{GLCD.c}!GLCDLogic@{GLCDLogic}}
+\index{GLCDLogic@{GLCDLogic}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{GLCDLogic()}{GLCDLogic()}}
+{\footnotesize\ttfamily void GLCDLogic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+GLCDLogic function. 
+
+This function is responsible for the logic to control the GLCD. It provides the necessary functionality to interact with the GLCD hardware. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_g_l_c_d_8c_aa8aa827dab861da09a82601c1493a21c}\label{_g_l_c_d_8c_aa8aa827dab861da09a82601c1493a21c} 
+\index{GLCD.c@{GLCD.c}!dataTransition@{dataTransition}}
+\index{dataTransition@{dataTransition}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{dataTransition}{dataTransition}}
+{\footnotesize\ttfamily bool data\+Transition =true}
+
+Flag indicating transition in data display. \Hypertarget{_g_l_c_d_8c_ae301d435533a9b49bc3a9485fdf8e1b8}\label{_g_l_c_d_8c_ae301d435533a9b49bc3a9485fdf8e1b8} 
+\index{GLCD.c@{GLCD.c}!drawBars@{drawBars}}
+\index{drawBars@{drawBars}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{drawBars}{drawBars}}
+{\footnotesize\ttfamily bool draw\+Bars =true}
+
+Flag indicating whether to draw bars on the display. \Hypertarget{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1}\label{_g_l_c_d_8c_ac626b39f0365742d6019bab92e3e45b1} 
+\index{GLCD.c@{GLCD.c}!GLCD\_Font\_16x24@{GLCD\_Font\_16x24}}
+\index{GLCD\_Font\_16x24@{GLCD\_Font\_16x24}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{GLCD\_Font\_16x24}{GLCD\_Font\_16x24}}
+{\footnotesize\ttfamily GLCD\+\_\+\+FONT GLCD\+\_\+\+Font\+\_\+16x24\hspace{0.3cm}{\ttfamily [extern]}}
+
+External declaration of GLCD font \Hypertarget{_g_l_c_d_8c_a2b791557b4e284380da57c3838b75bfa}\label{_g_l_c_d_8c_a2b791557b4e284380da57c3838b75bfa} 
+\index{GLCD.c@{GLCD.c}!GLCD\_Font\_6x8@{GLCD\_Font\_6x8}}
+\index{GLCD\_Font\_6x8@{GLCD\_Font\_6x8}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{GLCD\_Font\_6x8}{GLCD\_Font\_6x8}}
+{\footnotesize\ttfamily GLCD\+\_\+\+FONT GLCD\+\_\+\+Font\+\_\+6x8\hspace{0.3cm}{\ttfamily [extern]}}
+
+External declaration of GLCD font \Hypertarget{_g_l_c_d_8c_aa89905b62886f8dd96cee63c1b5e8ea2}\label{_g_l_c_d_8c_aa89905b62886f8dd96cee63c1b5e8ea2} 
+\index{GLCD.c@{GLCD.c}!Humidity@{Humidity}}
+\index{Humidity@{Humidity}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{Humidity}{Humidity}}
+{\footnotesize\ttfamily uint8\+\_\+t Humidity}
+
+Current humidity value. \Hypertarget{_g_l_c_d_8c_a4d2bb12048d831ca90dacc68b6a6d3f0}\label{_g_l_c_d_8c_a4d2bb12048d831ca90dacc68b6a6d3f0} 
+\index{GLCD.c@{GLCD.c}!initialPage@{initialPage}}
+\index{initialPage@{initialPage}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{initialPage}{initialPage}}
+{\footnotesize\ttfamily bool initial\+Page =true}
+
+FFlag indicating whether to show initial page on the display. \Hypertarget{_g_l_c_d_8c_add07759efe05f19128ee6ac5cc5633e9}\label{_g_l_c_d_8c_add07759efe05f19128ee6ac5cc5633e9} 
+\index{GLCD.c@{GLCD.c}!k@{k}}
+\index{k@{k}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{k}{k}}
+{\footnotesize\ttfamily uint32\+\_\+t k}
+
+Count value for LDR. \Hypertarget{_g_l_c_d_8c_a86806c565f196a65b3fe98ab22390b35}\label{_g_l_c_d_8c_a86806c565f196a65b3fe98ab22390b35} 
+\index{GLCD.c@{GLCD.c}!ldr\_val@{ldr\_val}}
+\index{ldr\_val@{ldr\_val}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{ldr\_val}{ldr\_val}}
+{\footnotesize\ttfamily uint16\+\_\+t ldr\+\_\+val}
+
+Current LDR (Light Dependent Resistor) value. \Hypertarget{_g_l_c_d_8c_a6b2be00545748909fe02383dbbf1f64d}\label{_g_l_c_d_8c_a6b2be00545748909fe02383dbbf1f64d} 
+\index{GLCD.c@{GLCD.c}!preset@{preset}}
+\index{preset@{preset}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{preset}{preset}}
+{\footnotesize\ttfamily char preset\mbox{[}9\mbox{]}}
+
+Array storing preset values. \Hypertarget{_g_l_c_d_8c_a06b2c30cc33fb19d78dfae29068d842d}\label{_g_l_c_d_8c_a06b2c30cc33fb19d78dfae29068d842d} 
+\index{GLCD.c@{GLCD.c}!readyTransition@{readyTransition}}
+\index{readyTransition@{readyTransition}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{readyTransition}{readyTransition}}
+{\footnotesize\ttfamily bool ready\+Transition =true}
+
+Flag indicating transition in ready display. \Hypertarget{_g_l_c_d_8c_a330661e379b19c85c17ede08dfaf1e7a}\label{_g_l_c_d_8c_a330661e379b19c85c17ede08dfaf1e7a} 
+\index{GLCD.c@{GLCD.c}!settingsTransition@{settingsTransition}}
+\index{settingsTransition@{settingsTransition}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{settingsTransition}{settingsTransition}}
+{\footnotesize\ttfamily bool settings\+Transition =true}
+
+Flag indicating transition in settings display. \Hypertarget{_g_l_c_d_8c_a2084c0b4612f85c8978d68f313384b1b}\label{_g_l_c_d_8c_a2084c0b4612f85c8978d68f313384b1b} 
+\index{GLCD.c@{GLCD.c}!showData@{showData}}
+\index{showData@{showData}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{showData}{showData}}
+{\footnotesize\ttfamily bool show\+Data =false}
+
+Flag indicating whether to show data on the display. \Hypertarget{_g_l_c_d_8c_a2ce4812059bf0e42da5aeb46f5e608cd}\label{_g_l_c_d_8c_a2ce4812059bf0e42da5aeb46f5e608cd} 
+\index{GLCD.c@{GLCD.c}!showDataPage@{showDataPage}}
+\index{showDataPage@{showDataPage}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{showDataPage}{showDataPage}}
+{\footnotesize\ttfamily bool show\+Data\+Page =false}
+
+Flag indicating whether to show data page on the display. \Hypertarget{_g_l_c_d_8c_a52f24b2f77156cc0bc24b925ba098f2b}\label{_g_l_c_d_8c_a52f24b2f77156cc0bc24b925ba098f2b} 
+\index{GLCD.c@{GLCD.c}!showSettingsPage@{showSettingsPage}}
+\index{showSettingsPage@{showSettingsPage}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{showSettingsPage}{showSettingsPage}}
+{\footnotesize\ttfamily bool show\+Settings\+Page =false}
+
+Flag indicating whether to show settings page on the display. \Hypertarget{_g_l_c_d_8c_a6bcb80d51f27ae9ebd7e2fd243e88a52}\label{_g_l_c_d_8c_a6bcb80d51f27ae9ebd7e2fd243e88a52} 
+\index{GLCD.c@{GLCD.c}!soilMoisturePercent@{soilMoisturePercent}}
+\index{soilMoisturePercent@{soilMoisturePercent}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{soilMoisturePercent}{soilMoisturePercent}}
+{\footnotesize\ttfamily int8\+\_\+t soil\+Moisture\+Percent}
+
+Current soil moisture percentage. \Hypertarget{_g_l_c_d_8c_abe58442f86399641d4ca7ee3e53de1f8}\label{_g_l_c_d_8c_abe58442f86399641d4ca7ee3e53de1f8} 
+\index{GLCD.c@{GLCD.c}!Temperature@{Temperature}}
+\index{Temperature@{Temperature}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{Temperature}{Temperature}}
+{\footnotesize\ttfamily uint8\+\_\+t Temperature}
+
+Current temperature value. \Hypertarget{_g_l_c_d_8c_a988b591bccb95f09ec55e449cc4ae528}\label{_g_l_c_d_8c_a988b591bccb95f09ec55e449cc4ae528} 
+\index{GLCD.c@{GLCD.c}!tsc\_state@{tsc\_state}}
+\index{tsc\_state@{tsc\_state}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{tsc\_state}{tsc\_state}}
+{\footnotesize\ttfamily TOUCH\+\_\+\+STATE tsc\+\_\+state}
+
+State of touch input, containing coordinates and if pressed \Hypertarget{_g_l_c_d_8c_a76e50c51dd2d37971e360fa8e7b2065f}\label{_g_l_c_d_8c_a76e50c51dd2d37971e360fa8e7b2065f} 
+\index{GLCD.c@{GLCD.c}!userTrigger@{userTrigger}}
+\index{userTrigger@{userTrigger}!GLCD.c@{GLCD.c}}
+\doxysubsubsection{\texorpdfstring{userTrigger}{userTrigger}}
+{\footnotesize\ttfamily bool user\+Trigger\hspace{0.3cm}{\ttfamily [extern]}}
+
+Flag for user trigger 

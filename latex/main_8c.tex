@@ -1,0 +1,123 @@
+\doxysection{C\+:/temp/humidtemp/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{C:/temp/humidtemp/main.c@{C:/temp/humidtemp/main.c}}
+
+
+This file contains functions to read sensor data and control the display.  
+
+
+{\ttfamily \#include "{}Board\+\_\+\+GLCD.\+h"{}}\newline
+{\ttfamily \#include "{}GLCD\+\_\+\+Config.\+h"{}}\newline
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}Board\+\_\+\+Touch.\+h"{}}\newline
+{\ttfamily \#include "{}GLCD.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920} 
+void {\bfseries System\+Clock\+\_\+\+Config} (void)
+\begin{DoxyCompactList}\small\item\em Configure the system clock. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a1103fa7a4b36fa361d5fcf55a63d3ac6}\label{main_8c_a1103fa7a4b36fa361d5fcf55a63d3ac6} 
+void {\bfseries init\+\_\+config} (void)
+\begin{DoxyCompactList}\small\item\em All configurations to be run on start. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}\label{main_8c_a738473a5b43f6c92b80ce1d3d6f77ed9} 
+void {\bfseries EXTI15\+\_\+10\+\_\+\+IRQHandler} (void)
+\begin{DoxyCompactList}\small\item\em Interrupt handler for EXTI15\+\_\+10. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback}} (uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Callback function for EXTI interrupt. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int {\bfseries main} (void)
+\begin{DoxyCompactList}\small\item\em Main function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GLCD\+\_\+\+FONT \mbox{\hyperlink{main_8c_ac626b39f0365742d6019bab92e3e45b1}{GLCD\+\_\+\+Font\+\_\+16x24}}
+\item 
+GPIO\+\_\+\+Init\+Type\+Def \mbox{\hyperlink{main_8c_a591ddc56da281d4cfd518f035c174289}{GPIO\+\_\+\+Init\+Struct}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a22b804736f5648d52f639b2647d4ed13}{hadc1}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_acd9221f1aa19aebfe0b744947f2daf49}{hadc2}}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{main_8c_a984624bcf28d1b2fb7e4e18349f65d5c}{hadc3}}
+\item 
+char \mbox{\hyperlink{main_8c_a38e7c3f1ce348a3ed20459d277245263}{buffer}} \mbox{[}128\mbox{]}
+\item 
+bool \mbox{\hyperlink{main_8c_a76e50c51dd2d37971e360fa8e7b2065f}{user\+Trigger}} =true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions to read sensor data and control the display. 
+
+This file contains the main functionality for reading sensor data and controlling the display on the STM32\+F746\+G-\/\+Discovery microcontroller.
+
+Utilizes an interrupt with the user button on the back of the board to pause sensor reading, the user can pause and resume the reading instead of it being active all the time.
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\label{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f} 
+\index{main.c@{main.c}!HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}}
+\index{HAL\_GPIO\_EXTI\_Callback@{HAL\_GPIO\_EXTI\_Callback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_GPIO\_EXTI\_Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+GPIO\+\_\+\+EXTI\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Callback function for EXTI interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIO\+\_\+\+Pin} & The pin number triggering the interrupt. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_a38e7c3f1ce348a3ed20459d277245263}\label{main_8c_a38e7c3f1ce348a3ed20459d277245263} 
+\index{main.c@{main.c}!buffer@{buffer}}
+\index{buffer@{buffer}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char buffer\mbox{[}128\mbox{]}}
+
+Buffer for storing data \Hypertarget{main_8c_ac626b39f0365742d6019bab92e3e45b1}\label{main_8c_ac626b39f0365742d6019bab92e3e45b1} 
+\index{main.c@{main.c}!GLCD\_Font\_16x24@{GLCD\_Font\_16x24}}
+\index{GLCD\_Font\_16x24@{GLCD\_Font\_16x24}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{GLCD\_Font\_16x24}{GLCD\_Font\_16x24}}
+{\footnotesize\ttfamily GLCD\+\_\+\+FONT GLCD\+\_\+\+Font\+\_\+16x24\hspace{0.3cm}{\ttfamily [extern]}}
+
+External declaration of GLCD font \Hypertarget{main_8c_a591ddc56da281d4cfd518f035c174289}\label{main_8c_a591ddc56da281d4cfd518f035c174289} 
+\index{main.c@{main.c}!GPIO\_InitStruct@{GPIO\_InitStruct}}
+\index{GPIO\_InitStruct@{GPIO\_InitStruct}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{GPIO\_InitStruct}{GPIO\_InitStruct}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Init\+Type\+Def GPIO\+\_\+\+Init\+Struct}
+
+GPIO initialization structure \Hypertarget{main_8c_a22b804736f5648d52f639b2647d4ed13}\label{main_8c_a22b804736f5648d52f639b2647d4ed13} 
+\index{main.c@{main.c}!hadc1@{hadc1}}
+\index{hadc1@{hadc1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hadc1}{hadc1}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc1}
+
+ADC handle 1 Moisture \Hypertarget{main_8c_acd9221f1aa19aebfe0b744947f2daf49}\label{main_8c_acd9221f1aa19aebfe0b744947f2daf49} 
+\index{main.c@{main.c}!hadc2@{hadc2}}
+\index{hadc2@{hadc2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hadc2}{hadc2}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc2}
+
+ADC handle 2 MQ135 \Hypertarget{main_8c_a984624bcf28d1b2fb7e4e18349f65d5c}\label{main_8c_a984624bcf28d1b2fb7e4e18349f65d5c} 
+\index{main.c@{main.c}!hadc3@{hadc3}}
+\index{hadc3@{hadc3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hadc3}{hadc3}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc3}
+
+ADC handle 3 LDR \Hypertarget{main_8c_a76e50c51dd2d37971e360fa8e7b2065f}\label{main_8c_a76e50c51dd2d37971e360fa8e7b2065f} 
+\index{main.c@{main.c}!userTrigger@{userTrigger}}
+\index{userTrigger@{userTrigger}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{userTrigger}{userTrigger}}
+{\footnotesize\ttfamily bool user\+Trigger =true}
+
+Flag for user trigger 

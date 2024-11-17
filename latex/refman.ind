@@ -1,0 +1,248 @@
+\begin{theindex}
+
+  \item {buffer}
+    \subitem {main.c}, \hyperpage{26}
+    \subitem {main.h}, \hyperpage{28}
+  \item {Bug List}, \hyperpage{3}
+
+  \indexspace
+
+  \item {C:/temp/humidtemp/DHT.c}, \hyperpage{13}
+  \item {C:/temp/humidtemp/DHT.h}, \hyperpage{16}
+  \item {C:/temp/humidtemp/GLCD.c}, \hyperpage{17}
+  \item {C:/temp/humidtemp/GLCD.h}, \hyperpage{22}
+  \item {C:/temp/humidtemp/LDR.c}, \hyperpage{23}
+  \item {C:/temp/humidtemp/LDR.h}, \hyperpage{24}
+  \item {C:/temp/humidtemp/main.c}, \hyperpage{25}
+  \item {C:/temp/humidtemp/main.h}, \hyperpage{27}
+  \item {C:/temp/humidtemp/Moisture.c}, \hyperpage{29}
+  \item {C:/temp/humidtemp/Moisture.h}, \hyperpage{31}
+  \item {C:/temp/humidtemp/mq135.c}, \hyperpage{32}
+  \item {C:/temp/humidtemp/mq135.h}, \hyperpage{35}
+  \item {checkAndDisplayStatus}
+    \subitem {GLCD.c}, \hyperpage{19}
+
+  \indexspace
+
+  \item {dataTransition}
+    \subitem {GLCD.c}, \hyperpage{20}
+  \item {DHT.c}
+    \subitem {DHT\_Check\_Response}, \hyperpage{14}
+    \subitem {DHT\_GetData}, \hyperpage{14}
+    \subitem {DHT\_Read}, \hyperpage{15}
+    \subitem {DHT\_Start}, \hyperpage{15}
+    \subitem {DWT\_Delay\_Init}, \hyperpage{15}
+    \subitem {DWT\_Delay\_us}, \hyperpage{15}
+    \subitem {Set\_Pin\_Input}, \hyperpage{16}
+    \subitem {Set\_Pin\_Output}, \hyperpage{16}
+  \item {DHT.h}
+    \subitem {DHT\_GetData}, \hyperpage{17}
+  \item {DHT\_Check\_Response}
+    \subitem {DHT.c}, \hyperpage{14}
+  \item {DHT\_DataTypedef}, \hyperpage{9}
+    \subitem {Humidity}, \hyperpage{9}
+    \subitem {Temperature}, \hyperpage{9}
+  \item {DHT\_GetData}
+    \subitem {DHT.c}, \hyperpage{14}
+    \subitem {DHT.h}, \hyperpage{17}
+  \item {DHT\_Read}
+    \subitem {DHT.c}, \hyperpage{15}
+  \item {DHT\_Start}
+    \subitem {DHT.c}, \hyperpage{15}
+  \item {displayStatus}
+    \subitem {GLCD.c}, \hyperpage{19}
+  \item {drawBars}
+    \subitem {GLCD.c}, \hyperpage{20}
+  \item {DWT\_Delay\_Init}
+    \subitem {DHT.c}, \hyperpage{15}
+  \item {DWT\_Delay\_us}
+    \subitem {DHT.c}, \hyperpage{15}
+
+  \indexspace
+
+  \item {getMQ135PPM}
+    \subitem {mq135.c}, \hyperpage{33}
+  \item {getMQ135Resistance}
+    \subitem {mq135.c}, \hyperpage{33}
+  \item {GLCD.c}
+    \subitem {checkAndDisplayStatus}, \hyperpage{19}
+    \subitem {dataTransition}, \hyperpage{20}
+    \subitem {displayStatus}, \hyperpage{19}
+    \subitem {drawBars}, \hyperpage{20}
+    \subitem {GLCD\_Font\_16x24}, \hyperpage{20}
+    \subitem {GLCD\_Font\_6x8}, \hyperpage{20}
+    \subitem {GLCDLogic}, \hyperpage{20}
+    \subitem {Humidity}, \hyperpage{20}
+    \subitem {initialPage}, \hyperpage{20}
+    \subitem {k}, \hyperpage{21}
+    \subitem {ldr\_val}, \hyperpage{21}
+    \subitem {preset}, \hyperpage{21}
+    \subitem {readyTransition}, \hyperpage{21}
+    \subitem {settingsTransition}, \hyperpage{21}
+    \subitem {showData}, \hyperpage{21}
+    \subitem {showDataPage}, \hyperpage{21}
+    \subitem {showSettingsPage}, \hyperpage{21}
+    \subitem {soilMoisturePercent}, \hyperpage{22}
+    \subitem {Temperature}, \hyperpage{22}
+    \subitem {tsc\_state}, \hyperpage{22}
+    \subitem {userTrigger}, \hyperpage{22}
+  \item {GLCD.h}
+    \subitem {GLCDLogic}, \hyperpage{23}
+  \item {GLCD\_Font\_16x24}
+    \subitem {GLCD.c}, \hyperpage{20}
+    \subitem {main.c}, \hyperpage{26}
+  \item {GLCD\_Font\_6x8}
+    \subitem {GLCD.c}, \hyperpage{20}
+  \item {GLCDLogic}
+    \subitem {GLCD.c}, \hyperpage{20}
+    \subitem {GLCD.h}, \hyperpage{23}
+  \item {GPIO\_InitStruct}
+    \subitem {main.c}, \hyperpage{26}
+
+  \indexspace
+
+  \item {hadc1}
+    \subitem {main.c}, \hyperpage{27}
+    \subitem {main.h}, \hyperpage{28}
+  \item {hadc2}
+    \subitem {main.c}, \hyperpage{27}
+    \subitem {main.h}, \hyperpage{28}
+  \item {hadc3}
+    \subitem {main.c}, \hyperpage{27}
+    \subitem {main.h}, \hyperpage{28}
+  \item {HAL\_GPIO\_EXTI\_Callback}
+    \subitem {main.c}, \hyperpage{26}
+  \item {Humidity}
+    \subitem {DHT\_DataTypedef}, \hyperpage{9}
+    \subitem {GLCD.c}, \hyperpage{20}
+
+  \indexspace
+
+  \item {initialPage}
+    \subitem {GLCD.c}, \hyperpage{20}
+
+  \indexspace
+
+  \item {k}
+    \subitem {GLCD.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {LDR.c}
+    \subitem {LDR\_GetData}, \hyperpage{23}
+    \subitem {readLDR}, \hyperpage{24}
+  \item {LDR.h}
+    \subitem {LDR\_GetData}, \hyperpage{24}
+  \item {LDR\_DataTypedef}, \hyperpage{10}
+    \subitem {LDR\_Val}, \hyperpage{10}
+  \item {LDR\_GetData}
+    \subitem {LDR.c}, \hyperpage{23}
+    \subitem {LDR.h}, \hyperpage{24}
+  \item {LDR\_Val}
+    \subitem {LDR\_DataTypedef}, \hyperpage{10}
+  \item {ldr\_val}
+    \subitem {GLCD.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {main.c}
+    \subitem {buffer}, \hyperpage{26}
+    \subitem {GLCD\_Font\_16x24}, \hyperpage{26}
+    \subitem {GPIO\_InitStruct}, \hyperpage{26}
+    \subitem {hadc1}, \hyperpage{27}
+    \subitem {hadc2}, \hyperpage{27}
+    \subitem {hadc3}, \hyperpage{27}
+    \subitem {HAL\_GPIO\_EXTI\_Callback}, \hyperpage{26}
+    \subitem {userTrigger}, \hyperpage{27}
+  \item {main.h}
+    \subitem {buffer}, \hyperpage{28}
+    \subitem {hadc1}, \hyperpage{28}
+    \subitem {hadc2}, \hyperpage{28}
+    \subitem {hadc3}, \hyperpage{28}
+    \subitem {userTrigger}, \hyperpage{28}
+  \item {map}
+    \subitem {Moisture.c}, \hyperpage{30}
+  \item {Microclimate manager}, \hyperpage{1}
+  \item {Moisture.c}
+    \subitem {map}, \hyperpage{30}
+    \subitem {Moisture\_GetData}, \hyperpage{30}
+    \subitem {readMoisture}, \hyperpage{31}
+    \subitem {readMoisturePercent}, \hyperpage{31}
+  \item {Moisture.h}
+    \subitem {Moisture\_GetData}, \hyperpage{32}
+  \item {Moisture\_DataTypedef}, \hyperpage{10}
+    \subitem {MoisturePercent}, \hyperpage{11}
+  \item {Moisture\_GetData}
+    \subitem {Moisture.c}, \hyperpage{30}
+    \subitem {Moisture.h}, \hyperpage{32}
+  \item {MoisturePercent}
+    \subitem {Moisture\_DataTypedef}, \hyperpage{11}
+  \item {mq135.c}
+    \subitem {getMQ135PPM}, \hyperpage{33}
+    \subitem {getMQ135Resistance}, \hyperpage{33}
+    \subitem {MQ\_GetData}, \hyperpage{34}
+    \subitem {my\_pow}, \hyperpage{34}
+    \subitem {readMQ135}, \hyperpage{34}
+  \item {mq135.h}
+    \subitem {MQ\_GetData}, \hyperpage{35}
+  \item {MQ135\_DataTypedef}, \hyperpage{11}
+    \subitem {PPM}, \hyperpage{11}
+  \item {MQ\_GetData}
+    \subitem {mq135.c}, \hyperpage{34}
+    \subitem {mq135.h}, \hyperpage{35}
+  \item {my\_pow}
+    \subitem {mq135.c}, \hyperpage{34}
+
+  \indexspace
+
+  \item {PPM}
+    \subitem {MQ135\_DataTypedef}, \hyperpage{11}
+  \item {preset}
+    \subitem {GLCD.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {readLDR}
+    \subitem {LDR.c}, \hyperpage{24}
+  \item {readMoisture}
+    \subitem {Moisture.c}, \hyperpage{31}
+  \item {readMoisturePercent}
+    \subitem {Moisture.c}, \hyperpage{31}
+  \item {readMQ135}
+    \subitem {mq135.c}, \hyperpage{34}
+  \item {readyTransition}
+    \subitem {GLCD.c}, \hyperpage{21}
+
+  \indexspace
+
+  \item {Set\_Pin\_Input}
+    \subitem {DHT.c}, \hyperpage{16}
+  \item {Set\_Pin\_Output}
+    \subitem {DHT.c}, \hyperpage{16}
+  \item {settingsTransition}
+    \subitem {GLCD.c}, \hyperpage{21}
+  \item {showData}
+    \subitem {GLCD.c}, \hyperpage{21}
+  \item {showDataPage}
+    \subitem {GLCD.c}, \hyperpage{21}
+  \item {showSettingsPage}
+    \subitem {GLCD.c}, \hyperpage{21}
+  \item {soilMoisturePercent}
+    \subitem {GLCD.c}, \hyperpage{22}
+
+  \indexspace
+
+  \item {Temperature}
+    \subitem {DHT\_DataTypedef}, \hyperpage{9}
+    \subitem {GLCD.c}, \hyperpage{22}
+  \item {tsc\_state}
+    \subitem {GLCD.c}, \hyperpage{22}
+
+  \indexspace
+
+  \item {userTrigger}
+    \subitem {GLCD.c}, \hyperpage{22}
+    \subitem {main.c}, \hyperpage{27}
+    \subitem {main.h}, \hyperpage{28}
+
+\end{theindex}

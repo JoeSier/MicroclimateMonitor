@@ -1,0 +1,60 @@
+\doxysection{C\+:/temp/humidtemp/\+LDR.c File Reference}
+\hypertarget{_l_d_r_8c}{}\label{_l_d_r_8c}\index{C:/temp/humidtemp/LDR.c@{C:/temp/humidtemp/LDR.c}}
+
+
+This file contains functions to read data from the Light Dependent Resistor (LDR).  
+
+
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}LDR.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_l_d_r_8c_a74b53b914db359af21be4fdc228f267b}{read\+LDR}} ()
+\begin{DoxyCompactList}\small\item\em Reads the analog value from the LDR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_d_r_8c_adfd1f92b0d3889d4e0f559414a2db2a3}{LDR\+\_\+\+Get\+Data}} (\mbox{\hyperlink{struct_l_d_r___data_typedef}{LDR\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}LDR\+\_\+\+Data)
+\begin{DoxyCompactList}\small\item\em Get LDR data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions to read data from the Light Dependent Resistor (LDR). 
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier  
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_d_r_8c_adfd1f92b0d3889d4e0f559414a2db2a3}\label{_l_d_r_8c_adfd1f92b0d3889d4e0f559414a2db2a3} 
+\index{LDR.c@{LDR.c}!LDR\_GetData@{LDR\_GetData}}
+\index{LDR\_GetData@{LDR\_GetData}!LDR.c@{LDR.c}}
+\doxysubsubsection{\texorpdfstring{LDR\_GetData()}{LDR\_GetData()}}
+{\footnotesize\ttfamily void LDR\+\_\+\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_d_r___data_typedef}{LDR\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}}]{LDR\+\_\+\+Data }\end{DoxyParamCaption})}
+
+
+
+Get LDR data. 
+
+This function retrieves moisture data and stores it in the provided \doxylink{struct_l_d_r___data_typedef}{LDR\+\_\+\+Data\+Typedef} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em LDR\+\_\+\+Data} & Pointer to the structure \doxylink{struct_l_d_r___data_typedef}{LDR\+\_\+\+Data\+Typedef}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_l_d_r_8c_a74b53b914db359af21be4fdc228f267b}\label{_l_d_r_8c_a74b53b914db359af21be4fdc228f267b} 
+\index{LDR.c@{LDR.c}!readLDR@{readLDR}}
+\index{readLDR@{readLDR}!LDR.c@{LDR.c}}
+\doxysubsubsection{\texorpdfstring{readLDR()}{readLDR()}}
+{\footnotesize\ttfamily uint32\+\_\+t read\+LDR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the analog value from the LDR. 
+
+\begin{DoxyNote}{Note}
+The sensor is connected to channel 6 (A3) of ADC3. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value read from the LDR. 
+\end{DoxyReturn}

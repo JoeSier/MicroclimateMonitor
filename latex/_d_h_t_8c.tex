@@ -1,0 +1,189 @@
+\doxysection{C\+:/temp/humidtemp/\+DHT.c File Reference}
+\hypertarget{_d_h_t_8c}{}\label{_d_h_t_8c}\index{C:/temp/humidtemp/DHT.c@{C:/temp/humidtemp/DHT.c}}
+
+
+This file contains functions to read data from the DHT11.  
+
+
+{\ttfamily \#include "{}stm32f7xx\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}main.\+h"{}}\newline
+{\ttfamily \#include "{}DHT.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_d_h_t_8c_adf42d52e26184fffc237b7bab4abdea6}\label{_d_h_t_8c_adf42d52e26184fffc237b7bab4abdea6} 
+\#define {\bfseries DHT\+\_\+\+PORT}~GPIOA
+\item 
+\Hypertarget{_d_h_t_8c_a661d236dd49f3aef3a2cf46cf6a1405e}\label{_d_h_t_8c_a661d236dd49f3aef3a2cf46cf6a1405e} 
+\#define {\bfseries DHT\+\_\+\+PIN}~GPIO\+\_\+\+PIN\+\_\+0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{_d_h_t_8c_a4fe08aec7b56318b01ca3ab4172861e3}{DWT\+\_\+\+Delay\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the DWT (Data Watchpoint and Trace) unit for microsecond delay. used from \href{https://deepbluembedded.com/stm32-delay-microsecond-millisecond-utility-dwt-delay-timer-delay/}{\texttt{ https\+://deepbluembedded.\+com/stm32-\/delay-\/microsecond-\/millisecond-\/utility-\/dwt-\/delay-\/timer-\/delay/}} as HAL works in ms only. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{_d_h_t_8c_a9e45b4997d968f82fdaca03f09a46781}{DWT\+\_\+\+Delay\+\_\+us}} (volatile uint32\+\_\+t au32\+\_\+microseconds)
+\begin{DoxyCompactList}\small\item\em Provides delay in microseconds using DWT. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_h_t_8c_aef1aec2157382676edb25c22e4b7ecef}{Set\+\_\+\+Pin\+\_\+\+Output}} (GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets a GPIO pin as output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_h_t_8c_a3b8cee858a35581caf1bcb14ce5cb367}{Set\+\_\+\+Pin\+\_\+\+Input}} (GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}GPIOx, uint16\+\_\+t GPIO\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Sets a GPIO pin as input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_h_t_8c_ac9b035e01ef84cfc4f7536a8dc4c2600}{DHT\+\_\+\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Initiates communication with DHT sensor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_d_h_t_8c_a8430977113c91b3be265deb778d163ab}{DHT\+\_\+\+Check\+\_\+\+Response}} (void)
+\begin{DoxyCompactList}\small\item\em Checks response from DHT sensor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_d_h_t_8c_a20e53d744b103fabc3888fe6312bb17c}{DHT\+\_\+\+Read}} (void)
+\begin{DoxyCompactList}\small\item\em Reads data from DHT sensor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_h_t_8c_a464e04833a3d55c11b343b19e33481bc}{DHT\+\_\+\+Get\+Data}} (\mbox{\hyperlink{struct_d_h_t___data_typedef}{DHT\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}DHT\+\_\+\+Data)
+\begin{DoxyCompactList}\small\item\em Get DHT data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_d_h_t_8c_ad9a2a1c5f490104dc717f5a48b3b8a27}\label{_d_h_t_8c_ad9a2a1c5f490104dc717f5a48b3b8a27} 
+uint8\+\_\+t {\bfseries Rh\+\_\+byte1}
+\item 
+\Hypertarget{_d_h_t_8c_a2dbbbd8e0fc90796f6389fc31ef811ad}\label{_d_h_t_8c_a2dbbbd8e0fc90796f6389fc31ef811ad} 
+uint8\+\_\+t {\bfseries Rh\+\_\+byte2}
+\item 
+\Hypertarget{_d_h_t_8c_a8b0074c25d30592e460b56b9f87d1ba9}\label{_d_h_t_8c_a8b0074c25d30592e460b56b9f87d1ba9} 
+uint8\+\_\+t {\bfseries Temp\+\_\+byte1}
+\item 
+\Hypertarget{_d_h_t_8c_a5544d12933412c17ee41513fa46cac02}\label{_d_h_t_8c_a5544d12933412c17ee41513fa46cac02} 
+uint8\+\_\+t {\bfseries Temp\+\_\+byte2}
+\item 
+\Hypertarget{_d_h_t_8c_a4622f107cd73d99fbf4ca91205f3acca}\label{_d_h_t_8c_a4622f107cd73d99fbf4ca91205f3acca} 
+uint16\+\_\+t {\bfseries SUM}
+\item 
+\Hypertarget{_d_h_t_8c_a653c5750f288e99e638bbd607fb885dc}\label{_d_h_t_8c_a653c5750f288e99e638bbd607fb885dc} 
+uint8\+\_\+t {\bfseries Presence} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains functions to read data from the DHT11. 
+
+\begin{DoxyAuthor}{Author}
+Joseph Sier 
+\end{DoxyAuthor}
+DHT logic based on \href{https://controllerstech.com/using-dht11-sensor-with-stm32/}{\texttt{ https\+://controllerstech.\+com/using-\/dht11-\/sensor-\/with-\/stm32/}} The DHT11 uses serial communication, which is very susceptible to errors, as most of the delays need to be in microseconds, which HAL does not support. I used a DWT delay to get a us (microsecond) delay.
+
+The DHT sensor operates by initiating communication with a start pulse to request data, then it awaits and reads the response pulse sent back by the DHT sensor. This response contains 40 bits of data which includes information about temperature and humidity. Upon reception, the data is processed and verified for integrity before being parsed and assigned to their respective temperature and humidity values. \begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]There is an issue with the timer in DHT11, and the code will only run from flash load. when the device is disconnected and plugged in, it will hang on the \doxylink{_d_h_t_8c_ac9b035e01ef84cfc4f7536a8dc4c2600}{DHT\+\_\+\+Start()}.\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_d_h_t_8c_a8430977113c91b3be265deb778d163ab}\label{_d_h_t_8c_a8430977113c91b3be265deb778d163ab} 
+\index{DHT.c@{DHT.c}!DHT\_Check\_Response@{DHT\_Check\_Response}}
+\index{DHT\_Check\_Response@{DHT\_Check\_Response}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{DHT\_Check\_Response()}{DHT\_Check\_Response()}}
+{\footnotesize\ttfamily uint8\+\_\+t DHT\+\_\+\+Check\+\_\+\+Response (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks response from DHT sensor. 
+
+\begin{DoxyReturn}{Returns}
+1 if response received, -\/1 if response timeout. 
+\end{DoxyReturn}
+\Hypertarget{_d_h_t_8c_a464e04833a3d55c11b343b19e33481bc}\label{_d_h_t_8c_a464e04833a3d55c11b343b19e33481bc} 
+\index{DHT.c@{DHT.c}!DHT\_GetData@{DHT\_GetData}}
+\index{DHT\_GetData@{DHT\_GetData}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{DHT\_GetData()}{DHT\_GetData()}}
+{\footnotesize\ttfamily void DHT\+\_\+\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_h_t___data_typedef}{DHT\+\_\+\+Data\+Typedef}} \texorpdfstring{$\ast$}{*}}]{DHT\+\_\+\+Data }\end{DoxyParamCaption})}
+
+
+
+Get DHT data. 
+
+This function retrieves DHT data and stores it in the provided \doxylink{struct_d_h_t___data_typedef}{DHT\+\_\+\+Data\+Typedef} structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em DHT\+\_\+\+Data} & Pointer to the structure \doxylink{struct_d_h_t___data_typedef}{DHT\+\_\+\+Data\+Typedef}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_d_h_t_8c_a20e53d744b103fabc3888fe6312bb17c}\label{_d_h_t_8c_a20e53d744b103fabc3888fe6312bb17c} 
+\index{DHT.c@{DHT.c}!DHT\_Read@{DHT\_Read}}
+\index{DHT\_Read@{DHT\_Read}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{DHT\_Read()}{DHT\_Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t DHT\+\_\+\+Read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reads data from DHT sensor. 
+
+\begin{DoxyReturn}{Returns}
+Data read from sensor. 
+\end{DoxyReturn}
+\Hypertarget{_d_h_t_8c_ac9b035e01ef84cfc4f7536a8dc4c2600}\label{_d_h_t_8c_ac9b035e01ef84cfc4f7536a8dc4c2600} 
+\index{DHT.c@{DHT.c}!DHT\_Start@{DHT\_Start}}
+\index{DHT\_Start@{DHT\_Start}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{DHT\_Start()}{DHT\_Start()}}
+{\footnotesize\ttfamily void DHT\+\_\+\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initiates communication with DHT sensor. 
+
+This function initializes the communication sequence with the DHT sensor to request data. \Hypertarget{_d_h_t_8c_a4fe08aec7b56318b01ca3ab4172861e3}\label{_d_h_t_8c_a4fe08aec7b56318b01ca3ab4172861e3} 
+\index{DHT.c@{DHT.c}!DWT\_Delay\_Init@{DWT\_Delay\_Init}}
+\index{DWT\_Delay\_Init@{DWT\_Delay\_Init}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{DWT\_Delay\_Init()}{DWT\_Delay\_Init()}}
+{\footnotesize\ttfamily uint32\+\_\+t DWT\+\_\+\+Delay\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the DWT (Data Watchpoint and Trace) unit for microsecond delay. used from \href{https://deepbluembedded.com/stm32-delay-microsecond-millisecond-utility-dwt-delay-timer-delay/}{\texttt{ https\+://deepbluembedded.\+com/stm32-\/delay-\/microsecond-\/millisecond-\/utility-\/dwt-\/delay-\/timer-\/delay/}} as HAL works in ms only. 
+
+\begin{DoxyReturn}{Returns}
+0 if initialization successful, 1 otherwise. 
+\end{DoxyReturn}
+\Hypertarget{_d_h_t_8c_a9e45b4997d968f82fdaca03f09a46781}\label{_d_h_t_8c_a9e45b4997d968f82fdaca03f09a46781} 
+\index{DHT.c@{DHT.c}!DWT\_Delay\_us@{DWT\_Delay\_us}}
+\index{DWT\_Delay\_us@{DWT\_Delay\_us}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{DWT\_Delay\_us()}{DWT\_Delay\_us()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void DWT\+\_\+\+Delay\+\_\+us (\begin{DoxyParamCaption}\item[{volatile uint32\+\_\+t}]{au32\+\_\+microseconds }\end{DoxyParamCaption})}
+
+
+
+Provides delay in microseconds using DWT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em au32\+\_\+microseconds} & Delay duration in microseconds. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_d_h_t_8c_a3b8cee858a35581caf1bcb14ce5cb367}\label{_d_h_t_8c_a3b8cee858a35581caf1bcb14ce5cb367} 
+\index{DHT.c@{DHT.c}!Set\_Pin\_Input@{Set\_Pin\_Input}}
+\index{Set\_Pin\_Input@{Set\_Pin\_Input}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{Set\_Pin\_Input()}{Set\_Pin\_Input()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Pin\+\_\+\+Input (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets a GPIO pin as input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & Pointer to GPIO port. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & GPIO pin to set as input. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_d_h_t_8c_aef1aec2157382676edb25c22e4b7ecef}\label{_d_h_t_8c_aef1aec2157382676edb25c22e4b7ecef} 
+\index{DHT.c@{DHT.c}!Set\_Pin\_Output@{Set\_Pin\_Output}}
+\index{Set\_Pin\_Output@{Set\_Pin\_Output}!DHT.c@{DHT.c}}
+\doxysubsubsection{\texorpdfstring{Set\_Pin\_Output()}{Set\_Pin\_Output()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Pin\+\_\+\+Output (\begin{DoxyParamCaption}\item[{GPIO\+\_\+\+Type\+Def \texorpdfstring{$\ast$}{*}}]{GPIOx,  }\item[{uint16\+\_\+t}]{GPIO\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Sets a GPIO pin as output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em GPIOx} & Pointer to GPIO port. \\
+\hline
+{\em GPIO\+\_\+\+Pin} & GPIO pin to set as output. \\
+\hline
+\end{DoxyParams}
